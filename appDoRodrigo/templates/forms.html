@@ -1,0 +1,28 @@
+<h1>{{ action }} Jogador:</h1>
+
+<form method="post">
+  
+  {% csrf_token %}
+  
+  <div>
+    <label>Nome: </label>
+    <input name= "nome" value="{{ j_h.nome }}"> 
+  </div>
+  
+  <div>
+    <label>Gols: </label>
+    <input name= "gols" value="{{ j_h.gols }}">
+  </div>
+  
+  <div>
+    <label>Partidas: </label>
+    <input name= "partidas" value="{{ j_h.partidas }}">
+  </div>
+  
+  <div>
+    <label>Títulos: </label>
+    <input name= "titulos" value="{{ j_h.titulos }}">
+  </div>
+
+  <input type="Submit" value="Salvar">
+</form>

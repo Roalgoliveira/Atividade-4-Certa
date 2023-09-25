@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+  
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Vascão da Gama</title>
+  <link href="{% static 'appDoRodrigo/styles.css' %}" rel="stylesheet" type="text/css" />
+  
+  
+</head>
+
+<body>
+  
+  <style>
+    
+        /* Estilo CSS para centralizar o título */
+        .titulo-centralizado {
+            text-align: center;
+        }
+
+  </style>
+  
+  <h1 class="titulo-centralizado">
+    Top 5 jogadores da história do Vasco da Gama (na minha opinião)
+  </h1> 
+  
+  <h3>Por Rodrigo Amarante Lobato Gervasio de Oliveira <a href="https://vasco.com.br/" class="btn btn-pulsando"><i class="icon icon-heart-1"></i> Vasco da Gama</a></h3>
+
+ 
+  <img src="https://media.supervasco.com/photo/arquivo/thumbs/pedrinho-vasco-9742.jpg.696x0_q70_crop.webp" height="450" width="500">
+  <img src="https://veja.abril.com.br/wp-content/uploads/2023/01/Roberto-Dinamite-do-Vasco-comemorando-gol..jpg.jpg?quality=90&strip=info&w=1280&h=720&crop=1" width="700" height="450">
+  <img src="https://www.netvasco.com.br/news/noticias16/arquivos/20121008felipejuninho.jpg" width="650" height="450"
+    
+  <p> 
+  <u> Pedrinho, Roberto Dinamite, Felipe, Juninho Pernambucano, Edmundo, Romário</u> (na imagem, da esquerda pra direita), Mauro Galvão, Bellini, Danilo, Dener, Acácio, Sorato, Ademir, Barbosa... Poderia ficar aqui até amanhã só listando a imensa quantidade de ídolos que o <i>Gigante da Colina</i> tem. Porém, o objetivo em questão é escolher os 5 <b><span style="color: red;">maiores</span></b> da história do <a href="https://vasco.com.br/" style="color: black"><b>Vasco da Gama</b></a>, levando em consideração os critérios: importância, gols, títulos e identificação com o clube: 
+
+    <h4>Top 5 artilheiros:</h4>
+
+  <table border="1">
+
+    <tr>
+      <th>Jogador</th> <th>Gols</th>
+  </tr>
+    <tr>
+      <td>Roberto Dinamite</td> <td>708</td>
+    </tr>
+    <tr>
+      <td>Romário</td> <td>321</td>
+    </tr>
+    <tr>
+      <td>Ademir</td> <td>281</td>
+    </tr>
+    <tr>
+      <td>Pinga</td> <td>249</td>
+    </tr>
+    <tr>
+      <td>Russinho</td> <td>227</td>
+    </tr>
+    
+  </table>
+
+     <h4>Criar Menções honrosas (sem ordem):</h4>
+
+    <ol>
+    {% for honra in honras %}
+      <li>
+        {{honra.nome}} 
+        <a href= "/jog_h/update/{{ honra.id }}">Atualizar</a> 
+        <a href= "/jog_h/delete/{{ honra.id }}">Deletar</a>
+      </li>
+    {% endfor %}
+</ol>
+<a href= "/jog_h">Adicionar jogador</a>
+
+  
+     <h4>Criar seu Top 5:</h4>
+
+<ol>
+    {% for top in tops %}
+      <li>
+        {{top.nome}}
+        <a href= "/jog_top/update/{{ top.id }}" >Atualizar</a> 
+        <a href= "/jog_top/delete/{{ top.id }}" >Deletar</a>
+      </li>
+    {% endfor %}
+</ol>
+<a href= "/jog_top">Adicionar jogador</a>
+
+
+
+  
+<a href="https://www.netvasco.com.br/mauroprais/vasco/idolos.html" style="color: red">
+<b>Confira uma vasta lista dos ídolos do Vasco</b></a> 
+
+
+</p>
+</body>
+</html>
